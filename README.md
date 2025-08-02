@@ -12,7 +12,7 @@ Este é um site profissional de uma pizzaria, desenvolvido com foco em design at
 
 ## 🌐 Acesse o site
 
-👉 [Clique aqui para visitar o site da pizzaria](https://seu-usuario.github.io/seu-repositorio)
+👉 [https://kauadevclub.github.io/meusite-pizzaria/)
 
 
 
