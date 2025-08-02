@@ -14,13 +14,7 @@ Este é um site profissional de uma pizzaria, desenvolvido com foco em design at
 
 👉 [Clique aqui para visitar o site da pizzaria](https://seu-usuario.github.io/seu-repositorio)
 
-_(Substitua o link acima pelo seu real, se ainda não estiver atualizado)_
 
-## 📸 Imagens do projeto
-
-![Screenshot do site da pizzaria](./screenshot.png)
-
-_(Adicione aqui um print da home ou das principais seções do site)_
 
 ## ✨ Funcionalidades
 
