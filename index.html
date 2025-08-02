@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Sabor Supremo | A fatia perfeita do seu dia!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-primary {
+            background-color: #8B0000;
+        }
+        .text-primary {
+            color: #8B0000;
+        }
+        .border-primary {
+            border-color: #8B0000;
+        }
+        .bg-secondary {
+            background-color: #D4AF37;
+        }
+        .text-secondary {
+            color: #D4AF37;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .pizza-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-card {
+            min-width: 300px;
+        }
+        .menu-tab.active {
+            background-color: #8B0000;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center mr-3">
+                    <i class="fas fa-pizza-slice text-white text-2xl"></i>
+                </div>
+                <h1 class="title-font text-2xl font-bold text-primary">Pizzaria <span class="text-secondary">Sabor Supremo</span></h1>
+            </div>
+            
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="text-gray-800 hover:text-primary font-medium transition">Início</a></li>
+                    <li><a href="#menu" class="text-gray-800 hover:text-primary font-medium transition">Cardápio</a></li>
+                    <li><a href="#about" class="text-gray-800 hover:text-primary font-medium transition">Sobre Nós</a></li>
+                    <li><a href="#testimonials" class="text-gray-800 hover:text-primary font-medium transition">Avaliações</a></li>
+                    <li><a href="#contact" class="text-gray-800 hover:text-primary font-medium transition">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-primary hover:bg-red-900 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    Peça Agora
+                </a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-gray-800">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full px-4 pb-4 shadow-lg">
+            <ul class="flex flex-col space-y-3">
+                <li><a href="#home" class="block py-2 text-gray-800 hover:text-primary">Início</a></li>
+                <li><a href="#menu" class="block py-2 text-gray-800 hover:text-primary">Cardápio</a></li>
+                <li><a href="#about" class="block py-2 text-gray-800 hover:text-primary">Sobre Nós</a></li>
+                <li><a href="#testimonials" class="block py-2 text-gray-800 hover:text-primary">Avaliações</a></li>
+                <li><a href="#contact" class="block py-2 text-gray-800 hover:text-primary">Contato</a></li>
+                <li>
+                    <a href="#contact" class="block bg-primary hover:bg-red-900 text-white font-bold py-2 px-6 rounded-full text-center transition duration-300">
+                        Peça Agora
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4 text-center text-white" data-aos="fade-up">
+            <h2 class="title-font text-4xl md:text-6xl font-bold mb-4">Pizza artesanal, ingredientes selecionados</h2>
+            <p class="text-xl md:text-2xl mb-8">A fatia perfeita do seu dia!</p>
+            <a href="#menu" class="bg-secondary hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-block">
+                Ver Cardápio
+            </a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-primary mb-4">Nosso Cardápio</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Delicie-se com nossas pizzas artesanais preparadas com os melhores ingredientes</p>
+            </div>
+            
+            <!-- Menu Tabs -->
+            <div class="flex justify-center mb-12 overflow-x-auto">
+                <div class="flex space-x-2 md:space-x-4">
+                    <button class="menu-tab active px-4 py-2 rounded-full border border-primary font-medium transition" data-category="tradicional">
+                        Tradicionais
+                    </button>
+                    <button class="menu-tab px-4 py-2 rounded-full border border-primary font-medium transition" data-category="especial">
+                        Especiais
+                    </button>
+                    <button class="menu-tab px-4 py-2 rounded-full border border-primary font-medium transition" data-category="doce">
+                        Doces
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Pizza Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Traditional Pizzas -->
+                <div class="pizza-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="tradicional" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1081&q=80" alt="Margherita" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Margherita</h3>
+                            <span class="text-secondary font-bold">R$ 45,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela, manjericão fresco e azeite de oliva.</p>
+                        <button class="add-to-cart w-full bg-primary hover:bg-red-900 text-white py-2 rounded-full transition duration-300">
+                            Adicionar ao pedido
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="pizza-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="tradicional" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" alt="Pepperoni" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Pepperoni</h3>
+                            <span class="text-secondary font-bold">R$ 49,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela e pepperoni em fatias.</p>
+                        <button class="add-to-cart w-full bg-primary hover:bg-red-900 text-white py-2 rounded-full transition duration-300">
+                            Adicionar ao pedido
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="pizza-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="tradicional" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80" alt="Quatro Queijos" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Quatro Queijos</h3>
+                            <span class="text-secondary font-bold">R$ 52,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela, provolone, parmesão e gorgonzola.</p>
+                        <button class="add-to-cart w-full bg-primary hover:bg-red-900 text-white py-2 rounded-full transition duration-300">
+                            Adicionar ao pedido
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Special Pizzas -->
+                <div class="pizza-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="especial" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1601924582971-4228a05f7566?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Frango com Catupiry" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Frango com Catupiry</h3>
+                            <span class="text-secondary font-bold">R$ 55,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela, frango desfiado e catupiry.</p>
+                        <button class="add-to-cart w-full bg-primary hover:bg-red-900 text-white py-2 rounded-full transition duration-300">
+                            Adicionar ao pedido
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="pizza-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="especial" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1613564834361-9436948817d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1043&q=80" alt="Calabresa Especial" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Calabresa Especial</h3>
+                            <span class="text-secondary font-bold">R$ 58,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela, calabresa, cebola, pimentão e azeitonas.</p>
+                        <button class="add-to-cart w-full bg-primary hover:bg-red-900 text-white py-2 rounded-full transition duration-300">
+                            Adicionar ao pedido
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="pizza-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="especial" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1618213837793-9a62f956af6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Portuguesa" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Portuguesa</h3>
+                            <span class="text-secondary font-bold">R$ 59,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela, presunto, ovos, cebola, pimentão e azeitonas.</p>
+                        <button class="add-to-cart w-full bg-primary hover:bg-red-900 text-white py-2 rounded-full transition duration-300">
+                            Adicionar ao pedido
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Sweet Pizzas -->
+                <div class="pizza-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="doce" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d9cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Romeu e Julieta" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Romeu e Julieta</h3>
+                            <span class="text-secondary font-bold">R$ 48,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Mussarela, goiabada em pedaços e queijo minas meia cura.</p>
+                        <button class="add-to-cart w-full bg-primary hover:bg-red-900 text-white py-2 rounded-full transition duration-300">
+                            Adicionar ao pedido
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="pizza-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="doce" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Chocolate com Morango" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Chocolate com Morango</h3>
+                            <span class="text-secondary font-bold">R$ 54,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Chocolate ao leite e morangos frescos.</p>
+                        <button class="add-to-cart w-full bg-primary hover:bg-red-900 text-white py-2 rounded-full transition duration-300">
+                            Adicionar ao pedido
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="pizza-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="doce" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1576458088433-ab054270345e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Banana com Canela" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Banana com Canela</h3>
+                            <span class="text-secondary font-bold">R$ 46,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Banana, açúcar e canela.</p>
+                        <button class="add-to-cart w-full bg-primary hover:bg-red-900 text-white py-2 rounded-full transition duration-300">
+                            Adicionar ao pedido
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Pizzaria" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h2 class="title-font text-3xl md:text-4xl font-bold text-primary mb-6">Nossa História</h2>
+                    <div class="w-24 h-1 bg-secondary mb-6"></div>
+                    <p class="text-gray-600 mb-4">Fundada em 1995, a Pizzaria Sabor Supremo nasceu do sonho de trazer a autêntica pizza italiana para o Brasil, com um toque especial de criatividade e sabor.</p>
+                    <p class="text-gray-600 mb-6">Nossa massa é preparada diariamente com farinha especial importada da Itália e fermentação natural, garantindo aquela textura única e sabor inigualável.</p>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-4">
+                                <i class="fas fa-fire text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Forno à Lenha</h3>
+                        </div>
+                        <p class="text-gray-600 ml-14">Nossas pizzas são assadas em forno à lenha, alcançando a temperatura perfeita para o cozimento ideal.</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-4">
+                                <i class="fas fa-leaf text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Ingredientes Frescos</h3>
+                        </div>
+                        <p class="text-gray-600 ml-14">Selecionamos cuidadosamente os melhores ingredientes, priorizando produtores locais e ingredientes frescos.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-4">
+                                <i class="fas fa-heart text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Feito com Amor</h3>
+                        </div>
+                        <p class="text-gray-600 ml-14">Cada pizza é preparada com dedicação e paixão, garantindo uma experiência gastronômica memorável.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-primary mb-4">O que nossos clientes dizem</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">A satisfação dos nossos clientes é nossa maior recompensa</p>
+            </div>
+            
+            <div class="relative">
+                <div class="testimonial-carousel flex overflow-x-auto pb-10 scrollbar-hide" style="scroll-snap-type: x mandatory;">
+                    <div class="testimonial-card flex-shrink-0 bg-white rounded-lg shadow-md p-8 mx-4 scroll-snap-align-start" style="width: calc(100% - 2rem); max-width: 500px;" data-aos="fade-up">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Ana Carolina</h4>
+                                <div class="flex text-secondary">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"A melhor pizza que já comi na vida! A massa é perfeita, crocante por fora e macia por dentro. A pizza de frango com catupiry é divina!"</p>
+                    </div>
+                    
+                    <div class="testimonial-card flex-shrink-0 bg-white rounded-lg shadow-md p-8 mx-4 scroll-snap-align-start" style="width: calc(100% - 2rem); max-width: 500px;" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Cliente" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Ricardo Almeida</h4>
+                                <div class="flex text-secondary">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"Sou cliente há mais de 10 anos e nunca me decepcionei. O atendimento é excelente e as pizzas chegam sempre quentinhas e deliciosas."</p>
+                    </div>
+                    
+                    <div class="testimonial-card flex-shrink-0 bg-white rounded-lg shadow-md p-8 mx-4 scroll-snap-align-start" style="width: calc(100% - 2rem); max-width: 500px;" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Cliente" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Fernanda Oliveira</h4>
+                                <div class="flex text-secondary">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"Adoro levar minha família para jantar na Pizzaria Sabor Supremo. O ambiente é acolhedor e as pizzas doces são uma verdadeira tentação!"</p>
+                    </div>
+                    
+                    <div class="testimonial-card flex-shrink-0 bg-white rounded-lg shadow-md p-8 mx-4 scroll-snap-align-start" style="width: calc(100% - 2rem); max-width: 500px;" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Cliente" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Carlos Eduardo</h4>
+                                <div class="flex text-secondary">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"A pizza pepperoni é simplesmente incrível! Já experimentei várias pizzarias na cidade, mas nenhuma se compara ao Sabor Supremo."</p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8">
+                    <button class="testimonial-prev bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mx-1">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimonial-next bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mx-1">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-primary mb-4">Entre em Contato</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Estamos sempre prontos para atendê-lo da melhor forma possível</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10" data-aos="fade-right">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Informações</h3>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Endereço</h4>
+                                <p class="text-gray-600">Rua das Pizzas, 123 - Centro, São Paulo - SP</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Telefone</h4>
+                                <p class="text-gray-600">(11) 1234-5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                <i class="fab fa-whatsapp text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">WhatsApp</h4>
+                                <p class="text-gray-600">(11) 98765-4321</p>
+                                <a href="https://wa.me/5511987654321" class="inline-block bg-green-500 hover:bg-green-600 text-white py-1 px-4 rounded-full text-sm mt-2 transition duration-300">
+                                    Enviar mensagem
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                <i class="far fa-clock text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Horário de Funcionamento</h4>
+                                <p class="text-gray-600">Terça a Domingo: 18h às 23h</p>
+                                <p class="text-gray-600">Sexta e Sábado: 18h às 00h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="h-64 md:h-80 rounded-lg overflow-hidden shadow-md" data-aos="fade-up">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0754267452926!2d-46.65342692468798!3d-23.5657343617481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1689872497654!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Envie uma mensagem</h3>
+                        
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-red-900 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-3">
+                            <i class="fas fa-pizza-slice text-white"></i>
+                        </div>
+                        <h2 class="title-font text-2xl font-bold">Pizzaria <span class="text-secondary">Sabor Supremo</span></h2>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-xs">A fatia perfeita do seu dia!</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Início</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">Cardápio</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre Nós</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Avaliações</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-lg font-bold mb-4">Horário de Funcionamento</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Terça a Quinta:</span>
+                            <span>18h - 23h</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sexta e Sábado:</span>
+                            <span>18h - 00h</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Domingo:</span>
+                            <span>18h - 22h</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Segunda:</span>
+                            <span>Fechado</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Assine nossa newsletter para receber promoções especiais!</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-primary hover:bg-red-900 px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Pizzaria Sabor Supremo. Todos os direitos reservados.</p>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <a href="#" class="hover:text-white transition">Termos de Serviço</a>
+                    <a href="#" class="hover:text-white transition">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Cart Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="cart-button" class="bg-primary hover:bg-red-900 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition duration-300">
+            <i class="fas fa-shopping-cart text-2xl"></i>
+            <span id="cart-count" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">0</span>
+        </button>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md max-h-[80vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold text-gray-800">Seu Pedido</h3>
+                    <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div id="cart-items" class="space-y-4 mb-6">
+                    <!-- Cart items will be added here by JavaScript -->
+                    <p class="text-gray-500 text-center py-4">Seu carrinho está vazio</p>
+                </div>
+                
+                <div class="border-t border-gray-200 pt-4 mb-6">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Subtotal:</span>
+                        <span id="cart-subtotal" class="font-bold">R$ 0,00</span>
+                    </div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Taxa de Entrega:</span>
+                        <span class="font-bold">R$ 8,00</span>
+                    </div>
+                    <div class="flex justify-between text-lg">
+                        <span class="font-bold">Total:</span>
+                        <span id="cart-total" class="font-bold text-primary">R$ 8,00</span>
+                    </div>
+                </div>
+                
+                <button id="checkout-button" class="w-full bg-primary hover:bg-red-900 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Finalizar Pedido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menu tabs functionality
+        const menuTabs = document.querySelectorAll('.menu-tab');
+        const pizzaCards = document.querySelectorAll('.pizza-card');
+        
+        menuTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                menuTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                const category = tab.getAttribute('data-category');
+                
+                // Show/hide pizza cards based on category
+                pizzaCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Testimonial carousel
+        const carousel = document.querySelector('.testimonial-carousel');
+        const prevButton = document.querySelector('.testimonial-prev');
+        const nextButton = document.querySelector('.testimonial-next');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        let currentIndex = 0;
+        
+        function updateCarousel() {
+            const cardWidth = testimonialCards[0].offsetWidth + 32; // width + margin
+            carousel.scrollTo({
+                left: currentIndex * cardWidth,
+                behavior: 'smooth'
+            });
+        }
+        
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < testimonialCards.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+        
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        // Cart functionality
+        const cartButton = document.getElementById('cart-button');
+        const cartModal = document.getElementById('cart-modal');
+        const closeCart = document.getElementById('close-cart');
+        const cartItems = document.getElementById('cart-items');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartTotal = document.getElementById('cart-total');
+        const cartCount = document.getElementById('cart-count');
+        const checkoutButton = document.getElementById('checkout-button');
+        
+        let cart = [];
+        
+        // Toggle cart modal
+        cartButton.addEventListener('click', () => {
+            cartModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Add to cart functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const pizzaCard = button.closest('.pizza-card');
+                const pizzaName = pizzaCard.querySelector('h3').textContent;
+                const pizzaPrice = pizzaCard.querySelector('span').textContent;
+                const pizzaImg = pizzaCard.querySelector('img').src;
+                
+                // Add item to cart
+                const priceValue = parseFloat(pizzaPrice.replace('R$ ', '').replace(',', '.'));
+                cart.push({
+                    name: pizzaName,
+                    price: priceValue,
+                    img: pizzaImg
+                });
+                
+                // Update cart UI
+                updateCart();
+                
+                // Show success message
+                const originalText = button.textContent;
+                button.textContent = 'Adicionado!';
+                button.classList.add('bg-green-500', 'hover:bg-green-600');
+                button.classList.remove('bg-primary', 'hover:bg-red-900');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('bg-green-500', 'hover:bg-green-600');
+                    button.classList.add('bg-primary', 'hover:bg-red-900');
+                }, 2000);
+            });
+        });
+        
+        function updateCart() {
+            // Update cart count
+            cartCount.textContent = cart.length;
+            
+            // Update cart items list
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-gray-500 text-center py-4">Seu carrinho está vazio</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'flex items-center justify-between border-b border-gray-200 pb-4';
+                    cartItem.innerHTML = `
+                        <div class="flex items-center">
+                            <img src="${item.img}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg mr-4">
+                            <div>
+                                <h4 class="font-medium">${item.name}</h4>
+                                <p class="text-primary font-bold">R$ ${item.price.toFixed(2).replace('.', ',')}</p>
+                            </div>
+                        </div>
+                        <button class="remove-item text-red-500 hover:text-red-700" data-index="${index}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    cartItems.appendChild(cartItem);
+                });
+            }
+            
+            // Update subtotal and total
+            const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const total = subtotal + 8; // Adding delivery fee
+            
+            cartSubtotal.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            cartTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const index = parseInt(button.getAttribute('data-index'));
+                    cart.splice(index, 1);
+                    updateCart();
+                });
+            });
+        }
+        
+        // Checkout button
+        checkoutButton.addEventListener('click', () => {
+            if (cart.length > 0) {
+                alert('Pedido finalizado com sucesso! Em breve entraremos em contato para confirmar.');
+                cart = [];
+                updateCart();
+                cartModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            } else {
+                alert('Seu carrinho está vazio. Adicione itens antes de finalizar o pedido.');
+            }
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show a success message
+            alert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Calculate scroll position (accounting for fixed header)
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
